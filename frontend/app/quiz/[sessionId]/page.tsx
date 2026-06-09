@@ -96,6 +96,7 @@ function QuizSessionView({
         </div>
         <div className="flex items-center gap-3 self-end md:self-auto">
           <QuizTimer elapsed={elapsed} />
+          <Button variant="secondary" onClick={() => router.push("/dashboard")}>Cancel quiz</Button>
           <StudentLogoutButton />
         </div>
       </div>

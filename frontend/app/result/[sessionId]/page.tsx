@@ -153,7 +153,8 @@ export default function ResultPage() {
             </tbody>
           </table>
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-between">
+          <Button variant="ghost" onClick={() => router.back()}>Go back</Button>
           <Button variant="secondary" onClick={() => router.push("/dashboard")}>Take another quiz</Button>
         </div>
       </Card>
