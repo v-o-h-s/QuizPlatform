@@ -43,18 +43,19 @@ export function QuizCard({
           className="flex-1 sm:flex-none"
           variant="secondary"
           disabled={loading || loadingAdaptive}
-          onClick={() => onStart(quiz.id, false)}
+          onClick={() => onStart(quiz.id, true)}
+          title="Questions are chosen by the ML model based on your answers"
         >
-          {loading ? "Starting..." : "Start quiz"}
+          {loadingAdaptive ? "Starting..." : "Start quiz"}
         </Button>
         <Button
           className="flex-1 sm:flex-none"
           variant="ghost"
           disabled={loading || loadingAdaptive}
-          onClick={() => onStart(quiz.id, true)}
-          title="Questions are chosen by the ML model based on your answers"
+          onClick={() => onStart(quiz.id, false)}
+          title="Answer all questions in order"
         >
-          {loadingAdaptive ? "Starting..." : "Adaptive quiz"}
+          {loading ? "Starting..." : "All questions"}
         </Button>
       </div>
     </Card>
