@@ -11,6 +11,7 @@ interface QuizState {
   currentQuestion: QuestionOut;
   questionNumber: number;
   total: number;
+  displayNumber: number;
   selected: string | null;
   submitting: boolean;
   done: boolean;
@@ -26,6 +27,7 @@ export function useQuiz(initialData: SessionStartOut) {
     currentQuestion: initialData.question,
     questionNumber: initialData.question_number,
     total: initialData.total,
+    displayNumber: 1,
     selected: null,
     submitting: false,
     done: false,
@@ -77,6 +79,7 @@ export function useQuiz(initialData: SessionStartOut) {
         currentQuestion: data.question!,
         questionNumber: data.question_number!,
         total: data.total!,
+        displayNumber: current.displayNumber + 1,
         selected: null,
         submitting: false,
         predictedLevel: data.predicted_level ?? current.predictedLevel,

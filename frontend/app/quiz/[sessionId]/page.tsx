@@ -76,7 +76,7 @@ function QuizSessionView({
     <main className="mx-auto max-w-4xl px-6 py-10">
       <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="flex flex-1 flex-col gap-3">
-          <QuizProgress value={quiz.state.questionNumber} total={quiz.state.total} />
+          <QuizProgress value={quiz.state.displayNumber} total={isAdaptive ? 20 : quiz.state.total} />
           {isAdaptive && (
             <div className="flex items-center gap-3">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-violet-700">
