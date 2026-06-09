@@ -281,6 +281,7 @@ async def list_quizzes(db: AsyncPostgrestClient) -> list[QuizSummaryOut]:
             quiz.get("modules", {}).get("display_name") if quiz.get("modules") else None,
         )
         for quiz in quizzes
+        if counts.get(quiz["id"], 0) > 0
     ]
 
 
